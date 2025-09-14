@@ -1,0 +1,278 @@
+.container {
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userInfo span {
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Loading & Error States */
+.loading, .error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f4f6;
+  border-top: 3px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.retryButton {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* Stats Section */
+.statsSection {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.statCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s;
+}
+
+.statCard:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.statSuccess {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.statWarning {
+  background: #fffbeb;
+  border-color: #fed7aa;
+}
+
+.statIcon {
+  font-size: 1.5rem;
+}
+
+.statContent {
+  flex: 1;
+}
+
+.statNumber {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.25rem 0;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Documents Section */
+.documentsSection {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.buttonPrimary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.buttonPrimary:hover {
+  background-color: #1e3a8a;
+  transform: translateY(-1px);
+}
+
+.buttonSecondary {
+  background-color: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+.buttonSecondary:hover {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+.documentsList {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 1rem;
+  background: #f8fafc;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+}
+
+.emptyState p {
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .title {
+    font-size: 1rem;
+  }
+  
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sectionHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .actionButtons {
+    justify-content: center;
+  }
+  
+  .statCard {
+    padding: 0.75rem;
+  }
+  
+  .statNumber {
+    font-size: 1.5rem;
+  }
+}
