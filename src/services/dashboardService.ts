@@ -6,20 +6,23 @@ export const dashboardService = {
   async getStatistics(): Promise<Statistics> {
     try {
       const response = await apiClient.get('/api/v1/chunk-management/statistics');
-      return response.data || {
-        totalDocuments: 0,
-        totalChunks: 0,
-        approvedChunks: 0,
-        pendingChunks: 0
+      const data = response.data;
+  
+      return {
+        totalDocuments: data.total_documents,
+        totalChunks: data.total_chunks,
+        approvedChunks: data.approved_chunks,
+        pendingChunks: data.pending_chunks,
+        processingProgress: data.average_quality_score // nếu muốn gán vào
       };
     } catch (error) {
       console.error('Error fetching statistics:', error);
-      // Return mock data for development
       return {
-        totalDocuments: 15,
-        totalChunks: 450,
-        approvedChunks: 380,
-        pendingChunks: 70
+        totalDocuments: 0,
+        totalChunks: 0,
+        approvedChunks: 0,
+        pendingChunks: 0,
+        processingProgress: 0
       };
     }
   },

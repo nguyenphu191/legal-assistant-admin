@@ -1,0 +1,284 @@
+.container {
+    padding: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: var(--background);
+    min-height: 100vh;
+  }
+  
+  .header {
+    background: white;
+    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .backButton {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    transition: color 0.2s;
+  }
+  
+  .backButton:hover {
+    color: #1e3a8a;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+  }
+  
+  .documentStats {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.875rem;
+    color: #64748b;
+  }
+  
+  .statsBar {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  
+  .statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+  }
+  
+  .statItem:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .statNumber {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+  }
+  
+  .statLabel {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    text-align: center;
+  }
+  
+  .statPending {
+    background: #fffbeb;
+    border-color: #fed7aa;
+  }
+  
+  .statApproved {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+  }
+  
+  .statNeedsReview {
+    background: #fef3c7;
+    border-color: #fed7aa;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .filterControls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .filterControls label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  .filterSelect {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    background: white;
+    min-width: 160px;
+  }
+  
+  .bulkActions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .button {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .buttonPrimary {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  .buttonPrimary:hover:not(:disabled) {
+    background-color: #1e3a8a;
+    transform: translateY(-1px);
+  }
+  
+  .buttonSuccess {
+    background-color: var(--success);
+    color: white;
+  }
+  
+  .buttonSuccess:hover:not(:disabled) {
+    background-color: #047857;
+    transform: translateY(-1px);
+  }
+  
+  .buttonSecondary {
+    background-color: #f1f5f9;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .buttonSecondary:hover:not(:disabled) {
+    background-color: #e2e8f0;
+    color: #475569;
+  }
+  
+  .button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .chunksList {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  
+  .emptyState {
+    text-align: center;
+    padding: 3rem;
+    color: #64748b;
+  }
+  
+  .loading, .error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #e2e8f0;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f4f6;
+    border-top: 3px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .retryButton {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .statsGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+    
+    .statsGrid {
+      grid-template-columns: 1fr;
+    }
+    
+    .controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .bulkActions {
+      justify-content: center;
+    }
+    
+    .documentStats {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .title {
+      font-size: 1.25rem;
+    }
+  }

@@ -48,7 +48,7 @@ const Sidebar = () => {
       </div>
 
       <nav className={styles.nav}>
-        {menuItems.map((item) => (
+        {/* {menuItems.map((item) => (
           <button
             key={item.path}
             onClick={() => handleNavigation(item.path)}
@@ -57,7 +57,7 @@ const Sidebar = () => {
             <span className={styles.icon}>{item.icon}</span>
             <span>{item.label}</span>
           </button>
-        ))}
+        ))} */}
       </nav>
 
       <div className={styles.footer}>

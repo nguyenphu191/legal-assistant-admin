@@ -56,16 +56,24 @@ const DocumentCard = ({ document }: DocumentCardProps) => {
   };
 
   const handleViewDetails = () => {
+    console.log('Navigating to document details:', document.id);
     router.push(`/documents/${document.id}`);
   };
 
   const handleReview = () => {
+    console.log('Navigating to document review:', document.id);
     router.push(`/documents/${document.id}?tab=review`);
   };
 
   const handleImport = () => {
-    // Handle import functionality
     console.log('Import document:', document.id);
+
+    alert(`Import tài liệu ${document.filename} thành công!`);
+  };
+
+  const handleSettings = () => {
+    console.log('Open settings for document:', document.id);
+    alert(`Mở cài đặt cho tài liệu ${document.filename}`);
   };
 
   return (
@@ -93,30 +101,37 @@ const DocumentCard = ({ document }: DocumentCardProps) => {
         <button 
           onClick={handleViewDetails}
           className={`${styles.button} ${styles.buttonPrimary}`}
+          title={`Xem chi tiết tài liệu ${document.filename}`}
         >
-          XEM CHI TIẾT
+          👁️ XEM CHI TIẾT
         </button>
         
-        {document.status === 'pending_review' && (
+        {(document.status === 'pending_review' || document.pendingChunks > 0) && (
           <button 
             onClick={handleReview}
             className={`${styles.button} ${styles.buttonWarning}`}
+            title={`Duyệt ${document.pendingChunks} chunks cần xử lý`}
           >
-            DUYỆT TẤT CẢ
+            ✅ DUYỆT TẤT CẢ ({document.pendingChunks})
           </button>
         )}
         
-        {document.status === 'completed' && (
+        {document.status === 'completed' && document.approvedChunks > 0 && (
           <button 
             onClick={handleImport}
             className={`${styles.button} ${styles.buttonSuccess}`}
+            title={`Import ${document.approvedChunks} chunks đã duyệt vào hệ thống RAG`}
           >
-            IMPORT
+            📤 IMPORT ({document.approvedChunks})
           </button>
         )}
         
-        <button className={`${styles.button} ${styles.buttonSecondary}`}>
-          CÀI ĐẶT
+        <button 
+          onClick={handleSettings}
+          className={`${styles.button} ${styles.buttonSecondary}`}
+          title={`Cài đặt cho tài liệu ${document.filename}`}
+        >
+          ⚙️ CÀI ĐẶT
         </button>
       </div>
     </div>
