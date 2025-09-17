@@ -1,0 +1,150 @@
+.container {
+    width: 100%;
+  }
+  
+  .dropzone {
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #fefefe;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dropzone:hover:not(.disabled) {
+    border-color: var(--primary);
+    background-color: #f8fafc;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.1);
+  }
+  
+  .dragOver {
+    border-color: var(--primary);
+    background-color: #eff6ff;
+    transform: scale(1.02);
+  }
+  
+  .disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #f1f5f9;
+  }
+  
+  .fileInput {
+    display: none;
+  }
+  
+  .dropzoneContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 400px;
+  }
+  
+  .icon {
+    font-size: 3rem;
+    opacity: 0.7;
+  }
+  
+  .text {
+    text-align: center;
+  }
+  
+  .mainText {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #374151;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .subText {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+  }
+  
+  .clickText {
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: underline;
+  }
+  
+  .clickText:hover {
+    color: #1e3a8a;
+  }
+  
+  .requirements {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #64748b;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .requirements p {
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+    color: #475569;
+  }
+  
+  .requirements ul {
+    margin: 0;
+    padding-left: 1rem;
+    list-style-type: disc;
+  }
+  
+  .requirements li {
+    margin-bottom: 0.25rem;
+  }
+  
+  .error {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    color: #dc2626;
+    font-size: 0.875rem;
+  }
+  
+  .errorIcon {
+    font-size: 1rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .dropzone {
+      padding: 1.5rem 1rem;
+      min-height: 150px;
+    }
+    
+    .icon {
+      font-size: 2rem;
+    }
+    
+    .mainText {
+      font-size: 1rem;
+    }
+    
+    .dropzoneContent {
+      gap: 1rem;
+    }
+    
+    .requirements {
+      padding: 0.75rem;
+      font-size: 0.75rem;
+    }
+  }

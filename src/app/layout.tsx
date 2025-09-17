@@ -15,10 +15,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   if (!isLoaded) {
     return (
       <html lang="vi">
-        <head>
+        {/* <head>
           <title>Legal Assistant Admin</title>
           <meta name="description" content="Hệ thống quản lý tài liệu pháp lý" />
-        </head>
+        </head> */}
         <body>
           <div style={{ 
             display: 'flex', 
