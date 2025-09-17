@@ -1,0 +1,74 @@
+.container {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: #fef9f9;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+  }
+  
+  .title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #7f1d1d;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  
+  .issuesList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .issue {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+  
+  .issueError {
+    background-color: #fef2f2;
+    border-left: 3px solid #dc2626;
+  }
+  
+  .issueWarning {
+    background-color: #fefce8;
+    border-left: 3px solid #d97706;
+  }
+  
+  .issueSuggestion {
+    background-color: #eff6ff;
+    border-left: 3px solid #2563eb;
+  }
+  
+  .issueDefault {
+    background-color: #f8fafc;
+    border-left: 3px solid #64748b;
+  }
+  
+  .issueIcon {
+    font-size: 0.875rem;
+    margin-top: 0.125rem;
+  }
+  
+  .issueContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .issueMessage {
+    color: #1e293b;
+    line-height: 1.4;
+  }
+  
+  .issueLocation {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-style: italic;
+  }

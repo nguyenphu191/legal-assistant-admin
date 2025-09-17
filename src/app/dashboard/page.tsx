@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { useAuthStore } from '../../contexts/AuthContext';
 import { dashboardService } from '../../services/dashboardService';
 import { Statistics, Document, Chunk } from '../../types';
@@ -8,6 +9,7 @@ import styles from './dashboard.module.css';
 
 const Dashboard = () => {
   const { user } = useAuthStore();
+  const router = useRouter(); // ✅ FIXED: Use useRouter hook
   const [statistics, setStatistics] = useState<Statistics | null>(null);
   const [recentDocuments, setRecentDocuments] = useState<Document[]>([]);
   const [pendingChunks, setPendingChunks] = useState<Chunk[]>([]);
@@ -17,6 +19,11 @@ const Dashboard = () => {
   useEffect(() => {
     loadDashboardData();
   }, []);
+
+  const handleNavigation = (path: string) => {
+    console.log('Navigating to:', path);
+    router.push(path);
+  };
 
   const loadDashboardData = async () => {
     try {
@@ -118,7 +125,10 @@ const Dashboard = () => {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>📋 TÀI LIỆU GẦN ĐÂY:</h2>
             <div className={styles.actionButtons}>
-              <button className={`${styles.button} ${styles.buttonPrimary}`}>
+              <button 
+                onClick={() => handleNavigation('/upload')} 
+                className={`${styles.button} ${styles.buttonPrimary}`}
+              >
                 📤 UPLOAD TÀI LIỆU
               </button>
               <button className={`${styles.button} ${styles.buttonSecondary}`}>
@@ -138,13 +148,17 @@ const Dashboard = () => {
             ) : (
               <div className={styles.emptyState}>
                 <p>Chưa có tài liệu nào được upload.</p>
-                <button className={`${styles.button} ${styles.buttonPrimary}`}>
+                <button 
+                  onClick={() => handleNavigation('/upload')}
+                  className={`${styles.button} ${styles.buttonPrimary}`}
+                >
                   📤 Upload tài liệu đầu tiên
                 </button>
               </div>
             )}
           </div>
         </div>
+
         {/* Danh sách chunks chờ duyệt */}
         <div className={styles.chunksSection}>
           <h2 className={styles.sectionTitle}>⏳ CHUNKS CHỜ DUYỆT:</h2>
